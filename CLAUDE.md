@@ -58,6 +58,7 @@ SyncProvider interface (src/provider.ts)
 - **Cursor and Copilot sync selectively**: only specific database files and workspace directories, not entire app data.
 - **Errors are non-fatal**: missing directories are skipped, git push/pull failures are logged but don't crash the CLI.
 - **No linting or formatting config** is present in this repo.
+- **Cursor must be closed before pull**: the `.vscdb` SQLite file is locked while Cursor is running; importing it while Cursor is open will fail with a lock error.
 
 ### Testing
 
